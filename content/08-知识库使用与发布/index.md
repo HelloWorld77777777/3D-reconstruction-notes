@@ -1,5 +1,5 @@
 ---
-title: 知识库使用与发布
+title: 08 · 知识库使用与发布
 description: Obsidian 写作、Quartz 本地预览与 GitHub Pages 自动发布导航
 ---
 

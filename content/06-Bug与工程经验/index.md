@@ -1,5 +1,5 @@
 ---
-title: Bug 与工程经验
+title: 06 · Bug 与工程经验
 description: 编译、调试及三维重建工程问题记录
 ---
 

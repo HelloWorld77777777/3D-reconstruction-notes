@@ -1,5 +1,5 @@
 ---
-title: CUDA 高性能计算
+title: 03 · CUDA 高性能计算
 description: GPU 并行编程与三维重建算法优化
 ---
 

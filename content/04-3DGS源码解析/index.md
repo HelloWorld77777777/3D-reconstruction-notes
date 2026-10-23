@@ -1,5 +1,5 @@
 ---
-title: 3DGS 源码解析
+title: 04 · 3DGS 源码解析
 description: 3D Gaussian Splatting 算法与底层实现
 ---
 
