@@ -177,6 +177,8 @@ npm run preview
 
 命令运行后，打开 `http://localhost:8080/`。预览服务通常会监视笔记改动并重新构建；保存笔记后，稍等片刻并刷新页面。若 8080 端口已经有本项目的预览服务运行，直接使用现有服务即可，不要重复启动。要停止当前 CMD 窗口中的服务，按 `Ctrl + C`。
 
+`npm run preview` 将本地预览文件写入 `.quartz/preview/`；`npx quartz build` 将正式构建文件写入 `public/`。两者使用不同目录，避免预览时运行正式构建导致 Explorer 链接误带 GitHub Pages 路径。如果修改了 `package.json` 里的预览命令，先停止旧的预览服务再重新运行 `npm run preview`。
+
 ### 5.2 预览时重点检查什么
 
 - 从首页依次打开需要检查的分类，再点开新增笔记。
@@ -304,18 +306,18 @@ git push origin v5
 
 以下命令都应在项目根目录执行。`cd /d` 是 **CMD** 切换盘符和目录的写法；如果用 PowerShell，可直接运行 `Set-Location 'D:\code\study\3D-reconstruction-notes'`。
 
-| 命令                   | 用途                                       |
-| ---------------------- | ------------------------------------------ |
-| `git status`           | 查看分支、改动、暂存和待提交文件。         |
-| `git diff`             | 查看已跟踪文件尚未暂存的文字改动。         |
-| `git diff --cached`    | 查看已经暂存、即将提交的文字改动。         |
-| `git log --oneline -5` | 查看最近五条提交。                         |
-| `npm ci`               | 按锁定文件安装依赖。                       |
-| `npm run preview`      | 构建并在本机 8080 端口预览网站。           |
-| `npx quartz build`     | 单次生成网站到 `public`，用于构建检查。    |
-| `git add -A`           | 暂存仓库内所有未忽略的新增、修改和删除。   |
-| `git commit -m "说明"` | 在本机保存一次提交。                       |
-| `git push origin v5`   | 将 `v5` 提交上传到 GitHub 并触发自动部署。 |
+| 命令                   | 用途                                                   |
+| ---------------------- | ------------------------------------------------------ |
+| `git status`           | 查看分支、改动、暂存和待提交文件。                     |
+| `git diff`             | 查看已跟踪文件尚未暂存的文字改动。                     |
+| `git diff --cached`    | 查看已经暂存、即将提交的文字改动。                     |
+| `git log --oneline -5` | 查看最近五条提交。                                     |
+| `npm ci`               | 按锁定文件安装依赖。                                   |
+| `npm run preview`      | 构建到 `.quartz/preview`，并在本机 8080 端口预览网站。 |
+| `npx quartz build`     | 单次生成网站到 `public`，用于正式构建检查。            |
+| `git add -A`           | 暂存仓库内所有未忽略的新增、修改和删除。               |
+| `git commit -m "说明"` | 在本机保存一次提交。                                   |
+| `git push origin v5`   | 将 `v5` 提交上传到 GitHub 并触发自动部署。             |
 
 ## 十二、相关官方资料
 
